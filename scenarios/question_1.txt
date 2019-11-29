@@ -1,0 +1,12 @@
+I assume that all parts are running in the same server. We know which request is slow, https://example.com/test/index.php
+- We should check how long it takes to the task to be processed in: Apache log, PHP log. Search for the request:
+grep 'https://example.com/test/index.php' /var/log/httpd/access_log
+- Check /etc/php.ini to find php log location amd searhc there as well: 
+grep 'https://example.com/test/index.php' /var/log/test-php.log
+- We can find which process consumes most CPU:
+sudo top
+- If CPU load is low, we can check IO load, search for processes which consume most resourses:
+sudo iotop
+- If no clues from there, check MySQL long runing queries. Login to MySQL DB console and execute:
+show processlist;
+If slow_query_log is enabled for MySQL you can check it as well.

@@ -1,0 +1,11 @@
+I assume that images are built automatically per each commit but only release branches trigger deploy to UAT/staging environment.
+Docker project will need following tools: Git repository to store Dockerfiles, CI/CD tool to build images and deploy them to the registry, image registry to store built images.
+I would choose Atlassian stack for this as I am familiar with it the most and because it provides nice integration between Git repo, CI tool and Jira. As an image registry I'd choose JFrog Container Registry based on Artifactory because it is free and from my experience with Artifactory is robust and easy to maintain. Atlassian Bitbucket as Git repository, Atlassian Bamboo to build images and deploy them to the registry and to deploy images into production.
+Typical workflow:
+New Dockerfile is pushed to Git repository feature-branch
+Commit triggers Bamboo build.
+New image is being built and deployed to the registry
+After tests (auto or manual) it is merged into master branch
+Release branch is created from Master branch when release can be done
+Release branch triggers build of release Docker image version
+Successful build triggers deployment of the image to production

@@ -1,0 +1,6 @@
+ Network access. Access should be granted only to thе hosts which need it and limited where possible (for example if there is no web server on the host there is no need to allow 443 TCP connection to it). This allows to reduce attack surface.
+ Data encryption. We  should not store passwords in plain text in the db. Do not store login and passwords in open format in configuration, use some encrypted storage for it (vault). Use https instead of http to protect sensitive customer data like name, phone numbers etc.
+ WAF - protects from exploits on the website. If you are hosting website opened to the world it's nice idea to install such firewall.
+ Regular updates of os, libraries and software to mitigate found vulnerabilities
+ SSO and rbac for accessing multiple infrastructure services. 
+ Implement password policies based on minimal length, strength of the password, most used passwords like 'qwerty'

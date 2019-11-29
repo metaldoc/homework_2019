@@ -1,0 +1,9 @@
+Let's asume app name is 'bigdata'
+1. find pid
+sudo ps - ef | grep bigdata
+2. find where application write logs
+lsof -p <pid>
+3. search for errors or exceptions in logs:
+grep -i 'error\|exception' /var/log/bigdata.log
+4. use strace command to see which system calls are made by application:
+strace -f <pid>

@@ -1,0 +1,11 @@
+SQL stores data using predefined schema. noSQL doesn't have strict schema and data columns can be changed more flexibly. For example you created table with 2 columns id and country in SQL db and inserted data to it, 100 rows. Now db requires additional column, city for instance. So you should perform alter table add column city at first and only after that you will be able to add new data. Nosql allows to specify 'columns' dynamically, per each insert.
+
+PostgreSQL vs InfluxDB
+PostgreSQL uses table spaces to define where table data is stored on disk. For example CREATE TABLESPACE fastspace LOCATION '/ssd1/postgresql/data';
+ InfluxDB stores data in location defined by system conifguration, dir = "/var/lib/influxdb/data" by default.
+
+PostgreSQL - uses SQL:2011 standard
+SELECT DISTINCT column_1 FROM table_name;
+
+InfluxDB - pseudo SQL queries
+SELECT * FROM "foodships" WHERE time > now() - 1h

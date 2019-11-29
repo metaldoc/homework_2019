@@ -1,0 +1,5 @@
+I assume both servers are up, located in same geographic region, there are no VPN tunnels involved and there is no hardware failure in network infrastructure in between (broken switch for instance)
+I would look at:
+1 - IP / subnet of source server and destination server. If there is a route between subnets.
+2 - if route exists, check firewall rules on source and destination.
+3 - DNS resolution. If source is trying to reach destination by hostname it might not resolve or resolve to incorrect address.

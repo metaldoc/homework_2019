@@ -1,0 +1,5 @@
+
+I would check readme or if there is none ask repository owners which branch is used for active development and which Git flow repository owners use.
+Lets imagine repository is maintained according to 'ideal' Git flow (https://danielkummer.github.io/git-flow-cheatsheet/index.html)
+If I need to add new feature to it, I'd create feature branch and perform all changes in it. After feature is done, I'd squash all commits to single one and create pull request to develop branch.
+Conflict resolution can be done by editing file with conflict directly. If you are not sure about which changes to leave, use 'git log' to find author and clarify with him/her which changes should be left.

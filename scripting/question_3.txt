@@ -1,0 +1,4 @@
+If it is executed on a host which has SSH access to IP address 10.65.9.188 command prints:
+10.65.9.188,network node hostname,MAC address of the network interface with 10.65.9.188 address in dot notation,network interface name
+for example:
+10.65.9.188,antonro,e0d5.5e4d.b876,enp1s0
